@@ -1,1 +1,20 @@
 node_modules/
+
+# Created by https://www.gitignore.io/api/code
+
+### Code ###
+# Visual Studio Code - https://code.visualstudio.com/
+.settings/
+.vscode/
+tsconfig.json
+jsconfig.json
+
+
+# End of https://www.gitignore.io/api/code
+
+# Created by https://www.gitignore.io/api/npm
+
+#!! ERROR: npm is undefined. Use list command to see defined gitignore types !!#
+
+
+# End of https://www.gitignore.io/api/npm

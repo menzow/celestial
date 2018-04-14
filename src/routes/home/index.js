@@ -2,6 +2,7 @@ import { h, Component } from 'preact';
 import { route } from 'preact-router';
 import style from './style';
 import Configurator from '../../components/configurator';
+const MULTIPLIER = 2.5
 
 export default class Home extends Component {
 
@@ -83,12 +84,12 @@ export default class Home extends Component {
 		let factor = 4;
 
 		this.setState({
-			mercuryTheta: mercuryTheta + (mercuryTick / factor),
-			venusTheta: venusTheta + (venusTick / factor),
-			earthTheta: earthTheta + (earthTick / factor),
-			marsTheta: marsTheta + (marsTick / factor),
-			jupiterTheta: jupiterTheta + (jupiterTick / factor),
-			saturnTheta: saturnTheta + (saturnTick / factor)
+			mercuryTheta: mercuryTheta + ((mercuryTick*MULTIPLIER) / factor),
+			venusTheta: venusTheta + ((venusTick*MULTIPLIER) / factor),
+			earthTheta: earthTheta + ((earthTick*MULTIPLIER) / factor),
+			marsTheta: marsTheta + ((marsTick*MULTIPLIER) / factor),
+			jupiterTheta: jupiterTheta + ((jupiterTick*MULTIPLIER) / factor),
+			saturnTheta: saturnTheta + ((saturnTick*MULTIPLIER) / factor)
 		});
 	}
 
@@ -123,7 +124,7 @@ export default class Home extends Component {
 	startPattern (selectedPlanets, selectedInterval, selectedColor) {
 
 		if (!this._frameTimer) {
-			this._frameTimer = setInterval(() => this._frame(), 25);
+			this._frameTimer = setInterval(() => this._frame(), 1);
 		}
 
 		this.stopPattern();
@@ -133,7 +134,7 @@ export default class Home extends Component {
 
 		this._canvasContext.strokeStyle = selectedColor.toLowerCase();
 		this._canvasContext.lineWidth = 0.8;
-		this._patternTimer = setInterval(() => this._snapshot(), Number(selectedInterval) * 1000);
+		this._patternTimer = setInterval(() => this._snapshot(), Number(selectedInterval) * 100);
 	}
 
 	stopPattern () {

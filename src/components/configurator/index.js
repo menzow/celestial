@@ -13,7 +13,7 @@ export default class Configurator extends Component {
     startDisabled: false,
     stopDisabled: false,
     clearDisabled: false,
-    selectedPlanets: [],
+    selectedPlanets: ['Venus', 'Mars'],
     selectedColor: null,
     selectedInterval: null
   }
@@ -100,7 +100,7 @@ export default class Configurator extends Component {
           )}
         </div>
         <div class='frequencies'>
-          <h3>Interval (in seconds)</h3>
+          <h3>Interval (i * 100ms)</h3>
           {this.props.frequencies.map((interval) => (
             <input
               type='button'
@@ -120,9 +120,6 @@ export default class Configurator extends Component {
               onClick={this.onColorSelect}
               active={(this.state.selectedColor === color)} />)
           )}
-        </div>
-        <div class={style.playa}>
-          <iframe width="100%" height="166" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/343932112&amp;color=ff9900&amp;auto_play=true&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false"></iframe>
         </div>
       </div>
     )
