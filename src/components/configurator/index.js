@@ -100,7 +100,7 @@ export default class Configurator extends Component {
           )}
         </div>
         <div class='frequencies'>
-          <h3>Interval (i * 100ms)</h3>
+          <h3>Interval (i   * 100ms)</h3>
           {this.props.frequencies.map((interval) => (
             <input
               type='button'
