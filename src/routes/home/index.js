@@ -2,7 +2,7 @@ import { h, Component } from 'preact';
 import { route } from 'preact-router';
 import style from './style';
 import Configurator from '../../components/configurator';
-const MULTIPLIER = 2.5
+const MULTIPLIER = 1
 
 export default class Home extends Component {
 
@@ -12,43 +12,43 @@ export default class Home extends Component {
 		mercuryTheta: 270,
 		mercuryX: 0,
 		mercuryY: 0,
-		mercuryRadius: 40,
+		mercuryRadius: 1.5* 40,
 
 		venusTick: 3,
 		venusTheta: 270,
 		venusX: 0,
 		venusY: 0,
-		venusRadius: 60,
+		venusRadius: 1.5* 60,
 
 		earthTick: 2,
 		earthTheta: 270,
 		earthX: 0,
 		earthY: 0,
-		earthRadius: 100,
+		earthRadius: 1.5* 100,
 
 		marsTick: 1.5,
 		marsTheta: 270,
 		marsX: 0,
 		marsY: 0,
-		marsRadius: 150,
+		marsRadius: 1.5* 150,
 
 		jupiterTick: 1,
 		jupiterTheta: 270,
 		jupiterX: 0,
 		jupiterY: 0,
-		jupiterRadius: 200,
+		jupiterRadius: 1.5* 200,
 
 		saturnTick: 0.6,
 		saturnTheta: 270,
 		saturnX: 0,
 		saturnY: 0,
-		saturnRadius: 250,
+		saturnRadius: 1.5* 250,
 
 		patternSource: 'earth',
 		patternTarget: 'jupiter',
 		lines: [],
 
-		systemRadius: 300
+		systemRadius: 800
 	}
 
 	_getCoords (theta, radius) {
@@ -101,8 +101,8 @@ export default class Home extends Component {
 		let p1 = this.state.patternSource;
 		let p2 = this.state.patternTarget;
 
-		let p1Offset = (this.state.systemRadius + 0.5) - this.state[`${p1}Radius`];
-		let p2Offset = (this.state.systemRadius + 0.5) - this.state[`${p2}Radius`];
+		let p1Offset = (this.state.systemRadius + 0.4) - this.state[`${p1}Radius`];
+		let p2Offset = (this.state.systemRadius + 0.4) - this.state[`${p2}Radius`];
 
 		let p1Point = this._getCoords(this.state[`${p1}Theta`], this.state[`${p1}Radius`]);
 		let p2Point = this._getCoords(this.state[`${p2}Theta`], this.state[`${p2}Radius`]);
